@@ -15,4 +15,18 @@ Because i want to upgrade my skill in angular2
 <img style="width:100%" src="https://i.imgur.com/ZRJXB8l.gif">
 </p>
 
+## Setup: 
+Install angular cli
+```bash
+npm install -g angular-cli
+```
+Install the dependencies : 
+```bash
+npm install
+```
+Serve the app : 
+```bash
+ng serve
+```
+The app is now available on http://localhost:4200/
 
