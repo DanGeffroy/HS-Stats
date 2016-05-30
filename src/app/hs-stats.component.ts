@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CardsService } from './cards.service';
 import { InfosService } from './infos.service';
 import { Card } from './card';
-
+import { Infos } from './infos';
 
 @Component({
   moduleId: module.id,
@@ -15,23 +15,28 @@ import { Card } from './card';
 })
 export class HSStatsAppComponent  implements OnInit{
   title = 'hs-stats works!';
-  cards = {};
-  infos = {};
+  cards : Card[];
+  infos : Infos;
   error: any;
 
   constructor( private cardsService: CardsService,  private infosService: InfosService) {}
-  getAllCards() {
+
+  getCardsBySet(set) {
     this.cardsService
-        .getAllCards()
-        .then(Cards => this.cards = Cards);
+        .getCardsBySet(set)
+        .then(res => this.cards.push(res));
   }
   getInfos(){
     this.infosService
         .getInfos()
-        .then(Infos => this.infos = Infos);
+        .then(res => this.infos = res);
   }
 
   ngOnInit() {
+    console.log(this.cards)
     this.getInfos();
+    this.getCardsBySet("Basic");
+    setTimeout(function(){ console.log(this.cards)}, 5000);
+
   }
 }

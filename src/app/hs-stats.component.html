@@ -1,6 +1,11 @@
-<h1>
-  {{title}}
-</h1>
 <h2>
-info : {{infos.patch}}
+Current patch : {{infos.patch}}
 </h2>
+<h2>Available sets</h2>
+<ul>
+  <li *ngFor="let set of infos.sets; let i = index">{{set}}</li>
+</ul>
+<h2>Available card</h2>
+<ul>
+  <li *ngIf="cards.lenth > 0" *ngFor="let card of cards; let i = index">{{card.name}}</li>
+</ul>

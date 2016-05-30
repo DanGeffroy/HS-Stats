@@ -18,9 +18,16 @@ export class CardsService {
                 .then(response => response.json().data)
                 .catch(this.handleError);
    }
+
+  getCardsBySet(set): Promise<Card[]> {
+    let headers = new Headers({"X-Mashape-Key": "HY0cJ4Jkl7mshqqWiolxzLFNuqQ4p1vXxc3jsnJLglrzEOvIyV"});
+     return this.http.get(this.cardsUrl+"cards/sets/"+set,{headers: headers})
+                .toPromise()
+                .then(response => response.json().data)
+                .catch(this.handleError);
+   }
    private handleError(error: any) {
     console.error('An error occurred', error);
     return Promise.reject(error.message || error);
   }
-
 }
