@@ -9,8 +9,8 @@ Current patch : {{infos.patch}}
 <ul>
   <li *ngIf="sets.lenth > 0" *ngFor="let set of sets; let i = index">{{set.name}}
     <ul>
-      <li *ngFor="let card of set.cards; let i = index">{{card.name}}
-
+      <li *ngFor="let card of set.cards; let i = index">
+        <img src="{{card.img}}"/>
       </li>
     </ul>
   </li>

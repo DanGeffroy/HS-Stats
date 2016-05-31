@@ -44,6 +44,5 @@ export class HSStatsAppComponent  implements OnInit{
 
   ngOnInit() {
     this.getInfos();
-    this.getCardsBySet("Basic");
   }
 }
