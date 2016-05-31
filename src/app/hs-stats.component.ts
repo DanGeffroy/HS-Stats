@@ -15,7 +15,7 @@ import { Infos } from './infos';
 })
 export class HSStatsAppComponent  implements OnInit{
   title = 'hs-stats works!';
-  cards : Card[];
+  sets : Object[] = [];
   infos : Infos;
   error: any;
 
@@ -24,19 +24,26 @@ export class HSStatsAppComponent  implements OnInit{
   getCardsBySet(set) {
     this.cardsService
         .getCardsBySet(set)
-        .then(res => this.cards.push(res));
+        .then(response => this.sets.push({"name" : set, "cards" :response}));
   }
   getInfos(){
     this.infosService
         .getInfos()
-        .then(res => this.infos = res);
+        .then(res => this.test(res));
+  }
+
+  test(res){
+    this.infos = res;
+    this.infos.sets.forEach(function(element, index, array) {
+      if(element !== "Slush" && element !== "Promo"){
+          this.getCardsBySet(element);
+      }
+
+    }.bind(this));
   }
 
   ngOnInit() {
-    console.log(this.cards)
     this.getInfos();
     this.getCardsBySet("Basic");
-    setTimeout(function(){ console.log(this.cards)}, 5000);
-
   }
 }

@@ -1,11 +1,17 @@
-<h2>
+<h2 *ngIf="infos">
 Current patch : {{infos.patch}}
 </h2>
 <h2>Available sets</h2>
-<ul>
+<ul *ngIf="infos">
   <li *ngFor="let set of infos.sets; let i = index">{{set}}</li>
 </ul>
 <h2>Available card</h2>
 <ul>
-  <li *ngIf="cards.lenth > 0" *ngFor="let card of cards; let i = index">{{card.name}}</li>
+  <li *ngIf="sets.lenth > 0" *ngFor="let set of sets; let i = index">{{set.name}}
+    <ul>
+      <li *ngFor="let card of set.cards; let i = index">{{card.name}}
+
+      </li>
+    </ul>
+  </li>
 </ul>
