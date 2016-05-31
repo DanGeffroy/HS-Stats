@@ -7,6 +7,20 @@ Current patch : {{infos.patch}}
 </ul>
 <h2>Available card</h2>
 <p><input type="text" class="quicksearch" placeholder="Search" /></p>
+
+          <div class="input-field col s12">
+             <input id="country" type="text" class="validate filter-input" [(ngModel)]=query (keyup)=filter()>
+             <label for="country">Country</label>
+           </div>
+           <div class="suggestions" *ngIf="filteredList.length > 0">
+               <ul *ngFor="#item of filteredList" >
+                   <li >
+                       <a (click)="select(item)">{{item}}</a>
+                   </li>
+               </ul>
+           </div>
+
+
 <div class="grid">
   <div *ngIf="sets.lenth > 0" *ngFor="let set of sets; let i = index">
       <div  class="element-item transition" data-category="transition" *ngFor="let card of set.cards; let i = index">

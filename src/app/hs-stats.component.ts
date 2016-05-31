@@ -20,12 +20,24 @@ export class HSStatsAppComponent  implements OnInit{
   infos : Infos;
   error: any;
 
+  public query = '';
+  public countries = [];
+    public filteredList = [];
+    public elementRef;
+
   constructor( private cardsService: CardsService,  private infosService: InfosService) {}
 
   getCardsBySet(set) {
     this.cardsService
         .getCardsBySet(set)
-        .then(response => this.sets.push({"name" : set, "cards" :response}));
+        .then(response => this.test2(response, set) );
+  }
+  test2(response, set){
+    this.sets.push({"name" : set, "cards" :response});
+    response.forEach(function(element){
+      console.log(element)
+      this.countries.push(element.name);
+    }.bind(this));
   }
   getInfos(){
     this.infosService
@@ -41,13 +53,40 @@ export class HSStatsAppComponent  implements OnInit{
       }
 
     }.bind(this));
-    setTimeout(function(){   this.initIsotope(); }.bind(this), 5000);
+    //setTimeout(function(){   this.initIsotope(); }.bind(this), 5000);
   }
 
   ngOnInit() {
     this.getInfos();
   }
+  filter() {
+      if (this.query !== ""){
+          this.filteredList = this.countries.filter(function(el){
+              return el.toLowerCase().indexOf(this.query.toLowerCase()) > -1;
+          }.bind(this));
+      }else{
+          this.filteredList = [];
+      }
+  }
 
+  select(item){
+      this.query = item;
+      this.filteredList = [];
+  }
+
+  handleClick(event){
+   var clickedComponent = event.target;
+   var inside = false;
+   do {
+       if (clickedComponent === this.elementRef.nativeElement) {
+           inside = true;
+       }
+      clickedComponent = clickedComponent.parentNode;
+   } while (clickedComponent);
+    if(!inside){
+        this.filteredList = [];
+    }
+  }
   initIsotope(){
         // quick search regex
         var qsRegex;
