@@ -6,12 +6,12 @@ Current patch : {{infos.patch}}
   <li *ngFor="let set of infos.sets; let i = index">{{set}}</li>
 </ul>
 <h2>Available card</h2>
-<ul>
-  <li *ngIf="sets.lenth > 0" *ngFor="let set of sets; let i = index">{{set.name}}
-    <ul>
-      <li *ngFor="let card of set.cards; let i = index">
+<p><input type="text" class="quicksearch" placeholder="Search" /></p>
+<div class="grid">
+  <div *ngIf="sets.lenth > 0" *ngFor="let set of sets; let i = index">
+      <div  class="element-item transition" data-category="transition" *ngFor="let card of set.cards; let i = index">
+        <h3 class="name">{{card.name}}</h3>
         <img src="{{card.img}}"/>
-      </li>
-    </ul>
-  </li>
-</ul>
+      </div>
+  </div>
+</div>
