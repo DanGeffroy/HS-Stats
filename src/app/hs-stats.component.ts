@@ -3,6 +3,7 @@ import { CardsService } from './cards.service';
 import { InfosService } from './infos.service';
 import { Card } from './card';
 import { Infos } from './infos';
+import { CardName} from './card-name.pipe';
 declare var $:any;
 
 @Component({
@@ -12,10 +13,12 @@ declare var $:any;
   styleUrls: ['hs-stats.component.css'],
   providers: [
     CardsService,InfosService
-  ]
+  ],
+  pipes: [CardName]
 })
 export class HSStatsAppComponent  implements OnInit{
   title = 'hs-stats works!';
+  allCards = []
   sets : Object[] = [];
   infos : Infos;
   error: any;
@@ -33,10 +36,11 @@ export class HSStatsAppComponent  implements OnInit{
         .then(response => this.test2(response, set) );
   }
   test2(response, set){
-    this.sets.push({"name" : set, "cards" :response});
+    this.sets = [...this.sets, {"name" : set, "cards" :response}];
+
     response.forEach(function(element){
-      console.log(element)
       this.countries.push(element.name);
+      this.allCards = [...this.allCards, element];
     }.bind(this));
   }
   getInfos(){
