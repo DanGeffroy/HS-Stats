@@ -6,10 +6,9 @@ Current patch : {{infos.patch}}
   <li *ngFor="let set of infos.sets; let i = index">{{set}}</li>
 </ul>
 <h2>Available card</h2>
-<p><input type="text" class="quicksearch" placeholder="Search" /></p>
 
           <div class="input-field col s12">
-             <input id="country" #listFilter type="text" class="validate filter-input" [(ngModel)]=query (keyup)="filter(); 0">
+             <input id="listFilter" #listFilter type="text" class="validate filter-input" [(ngModel)]=query (keyup)="filter(); 0">
              <label for="country">Country</label>
            </div>
            <div class="suggestions" *ngIf="filteredList.length > 0">
@@ -23,7 +22,6 @@ Current patch : {{infos.patch}}
 
 <div  *ngIf="allCards" class="grid">
       <div  class="element-item transition" data-category="transition" *ngFor="let card of allCards | cardName:listFilter.value">
-        <h3 class="name">{{card.name}}</h3>
         <img src="{{card.img}}"/>
       </div>
 </div>
