@@ -4,7 +4,8 @@
   <meta charset="utf-8">
   <title>HSStats</title>
   <base href="/">
-
+  <script src="/js/pace.min.js"></script>
+  <link href="/css/pace.theme.css" rel="stylesheet" />
   {{#unless environment.production}}
   <script src="/ember-cli-live-reload.js" type="text/javascript"></script>
   {{/unless}}
@@ -19,7 +20,7 @@
 
 </head>
 <body>
-  <hs-stats-app>Loading...</hs-stats-app>
+  <hs-stats-app></hs-stats-app>
 
 
   <!--Import jQuery before materialize.js-->
