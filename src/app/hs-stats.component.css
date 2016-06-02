@@ -1,15 +1,26 @@
 .card-finder{
-  height:96vh;
+
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+/*  height:96vh;
   margin-top:  2vh!important;
-  margin-bottom:  2vh!important;
-  margin-left: 2vh!important;
+  margin-bottom:  2vh!important;*/
+.stats{
+
+
   overflow-y: hidden;
   overflow-x: hidden;
 }
 .all-app{
     margin-bottom: 0px;
 }
-
+.pannelFullSize{
+  height:96vh;
+  margin-top:  2vh!important;
+  margin-bottom:  2vh!important;
+}
 .card-img{
   width: 100%;
 }
