@@ -2,7 +2,7 @@
     <div class="row all-app">
       <div class="col m6 card-finder card-panel">
           <h2>Card finder</h2>
-
+          <div class="row">
                     <div class="input-field col s12">
                        <input id="listFilter" #listFilter type="text" class="validate filter-input" [(ngModel)]=query (keyup)="filter(); 0">
                        <label for="country">Country</label>
@@ -14,11 +14,10 @@
                              </li>
                          </ul>
                      </div>
-
-
+          </div>
           <div class="row grid">
           <div  *ngIf="allCards" *ngFor="let card of allCards | cardName:listFilter.value | paginate: { itemsPerPage: 8, currentPage: p }">
-                <div *ngIf="card" class="element-item transition" data-category="transition">
+                <div *ngIf="card" class="element-item">
                   <img *ngIf="card.img" class="card-img" src="{{card.img}}"/>
                 </div>
 

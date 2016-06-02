@@ -19,19 +19,15 @@
 /* ---- isotope ---- */
 
 .grid {
-
-}
-
-/* clear fix */
-.grid:after {
-  content: '';
-  display: block;
-  clear: both;
+  position: relative;
+   text-align:center;
 }
 
 /* ---- .element-item ---- */
 
 .element-item {
+  vertical-align:middle;
+  display:inline-block;
   width: 20%;
   position: relative;
   float: left;

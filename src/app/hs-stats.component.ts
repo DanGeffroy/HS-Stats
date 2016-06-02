@@ -7,8 +7,6 @@ import { CardName} from './card-name.pipe';
 
 import {PaginatePipe, PaginationControlsCmp, PaginationService} from 'ng2-pagination';
 
-declare var $:any;
-
 @Component({
   moduleId: module.id,
   selector: 'hs-stats-app',
@@ -61,7 +59,6 @@ export class HSStatsAppComponent  implements OnInit{
       }
 
     }.bind(this));
-    //setTimeout(function(){   this.initIsotope(); }.bind(this), 5000);
   }
 
   ngOnInit() {
@@ -94,42 +91,6 @@ export class HSStatsAppComponent  implements OnInit{
     if(!inside){
         this.filteredList = [];
     }
-  }
-  initIsotope(){
-        // quick search regex
-        var qsRegex;
-
-        // init Isotope
-        var $grid = $('.grid').isotope({
-          itemSelector: '.element-item',
-          layoutMode: 'fitRows',
-          filter: function() {
-            return qsRegex ? $(this).text().match( qsRegex ) : true;
-          }
-        });
-
-        // use value of search field to filter
-        var $quicksearch = $('.quicksearch').keyup( debounce( function() {
-          console.log("lol");
-          qsRegex = new RegExp( $quicksearch.val(), 'gi' );
-          $grid.isotope();
-        }, 200 ) );
-
-        // debounce so filtering doesn't happen every millisecond
-        function debounce( fn, threshold ) {
-          var timeout;
-          return function debounced() {
-            if ( timeout ) {
-              clearTimeout( timeout );
-            }
-            function delayed() {
-              fn();
-              timeout = null;
-            }
-            timeout = setTimeout( delayed, threshold || 100 );
-          }
-        }
-
   }
 
 }
