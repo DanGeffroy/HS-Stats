@@ -31,7 +31,8 @@ ng serve
 The app is now available on http://localhost:4200/
 
 ##TODO
-- card finder with autocomplete
+- :white_check_mark: card finder with autocomplete
 - stats for all cards
 - stats for some cards with criteria
+- Better UI
 
