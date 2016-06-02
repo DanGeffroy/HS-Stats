@@ -8,17 +8,22 @@
   {{#unless environment.production}}
   <script src="/ember-cli-live-reload.js" type="text/javascript"></script>
   {{/unless}}
-  <!-- Need to fix this -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-  <script src="https://npmcdn.com/isotope-layout@3.0/dist/isotope.pkgd.min.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <!--Import Google Icon Font-->
+  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+
 </head>
 <body>
   <hs-stats-app>Loading...</hs-stats-app>
 
 
-
+  <!--Import jQuery before materialize.js-->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script type="text/javascript" src="js/materialize.min.js"></script>
     {{#each scripts.polyfills}}<script src="{{.}}"></script>{{/each}}
     <script>
       System.import('system-config.js').then(function () {
