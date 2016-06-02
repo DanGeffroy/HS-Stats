@@ -2,14 +2,19 @@
 
   overflow-y: hidden;
   overflow-x: hidden;
+  background-color: white;
 }
 
+h2{
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
 /*  height:96vh;
   margin-top:  2vh!important;
   margin-bottom:  2vh!important;*/
 .stats{
-
-
   overflow-y: hidden;
   overflow-x: hidden;
 }
@@ -26,6 +31,12 @@
 }
 .suggestions{
   max-height: 300px;
+}
+
+.pagination{
+  width: 50%;
+    position: absolute;
+   bottom: 10px;
 }
 /* ---- isotope ---- */
 
