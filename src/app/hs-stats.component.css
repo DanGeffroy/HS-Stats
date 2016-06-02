@@ -1,3 +1,14 @@
+.card-finder{
+  height: 100%;
+}
+
+.card-img{
+  width: 200px;
+}
+.suggestions{
+  max-height: 300px;
+  overflow: scroll;
+}
 /* ---- isotope ---- */
 
 .grid {

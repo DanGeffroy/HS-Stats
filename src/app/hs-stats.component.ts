@@ -4,6 +4,9 @@ import { InfosService } from './infos.service';
 import { Card } from './card';
 import { Infos } from './infos';
 import { CardName} from './card-name.pipe';
+
+import {PaginatePipe, PaginationControlsCmp, PaginationService} from 'ng2-pagination';
+
 declare var $:any;
 
 @Component({
@@ -11,10 +14,11 @@ declare var $:any;
   selector: 'hs-stats-app',
   templateUrl: 'hs-stats.component.html',
   styleUrls: ['hs-stats.component.css'],
+  directives: [PaginationControlsCmp],
   providers: [
-    CardsService,InfosService
+    CardsService,InfosService,PaginationService
   ],
-  pipes: [CardName]
+  pipes: [CardName,PaginatePipe]
 })
 export class HSStatsAppComponent  implements OnInit{
   title = 'hs-stats works!';

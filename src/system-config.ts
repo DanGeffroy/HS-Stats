@@ -3,10 +3,13 @@
  **********************************************************************************************/
 /** Map relative paths to URLs. */
 const map: any = {
+  'ng2-pagination' : 'vendor/ng2-pagination/dist/ng2-pagination-bundle.js'
 };
 
 /** User packages configuration. */
 const packages: any = {
+  'ng2-pagination' : { format: 'register',
+ defaultExtension: 'js'}
 };
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
