@@ -3,21 +3,21 @@ import { CardsService } from './cards.service';
 import { InfosService } from './infos.service';
 import { Card } from './card';
 import { Infos } from './infos';
-import { CardName} from './card-name.pipe';
 import { StatsComponent} from './stats/stats.component';
+import {CardFinderComponent} from './card-finder/card-finder.component'
 
-import {PaginatePipe, PaginationControlsCmp, PaginationService} from 'ng2-pagination';
+
+
 
 @Component({
   moduleId: module.id,
   selector: 'hs-stats-app',
   templateUrl: 'hs-stats.component.html',
   styleUrls: ['hs-stats.component.css'],
-  directives: [PaginationControlsCmp,StatsComponent],
+  directives: [StatsComponent,CardFinderComponent],
   providers: [
-    CardsService,InfosService,PaginationService
-  ],
-  pipes: [CardName,PaginatePipe]
+    CardsService,InfosService
+  ]
 })
 export class HSStatsAppComponent  implements OnInit{
   title = 'hs-stats works!';

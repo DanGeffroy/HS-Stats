@@ -1,42 +1,9 @@
 
     <div class="row all-app">
       <div class="col s12 m6">
-          <div class="card-finder  pannelFullSize card-panel  blue lighten-2">
-            <h2>Card finder</h2>
-            <div class=card-panel>
-            <div class="row">
-                      <div class="input-field col s12">
-                         <input id="listFilter" #listFilter type="text" class="validate filter-input" [(ngModel)]=query (keyup)="filter(); 0">
-                         <label for="country">Card name</label>
-                       </div>
-                       <div *ngIf="filteredList.length > 0">
-                           <ul class="suggestions" *ngFor="let item of filteredList" >
-                               <li >
-                                   <a (click)="select(item)">{{item}}</a>
-                               </li>
-                           </ul>
-                       </div>
-            </div>
-            </div>
-            <div class="card-panel">
-          <div class="row grid">
-          <div  *ngIf="allCards" *ngFor="let card of allCards | cardName:listFilter.value | paginate: { itemsPerPage: 8, currentPage: p }">
-                <div *ngIf="card" class="element-item">
-                  <img *ngIf="card.img" class="card-img" src="{{card.img}}"/>
-                </div>
-
-          </div>
-          </div>
-            <div class="row center pagination">
-            <pagination-controls (pageChange)="p = $event"></pagination-controls>
-            </div>
-        </div>
-        </div>
+            <app-card-finder [allCards]="allCards" [sets]="sets" [infos]="infos" [query]="query" [countries]="countries" [filteredList]="filteredList" [elementRef]="elementRef"></app-card-finder>
         </div>
         <div class="col s12 m6 ">
-            <div class="stats card-panel deep-purple lighten-2 pannelFullSize ">
-            <h2>Stats</h2>
               <app-stats [sets]="sets"></app-stats>
-          </div>
         </div>
     </div>

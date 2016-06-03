@@ -1,0 +1,46 @@
+.card-finder{
+
+  overflow-y: hidden;
+  overflow-x: hidden;
+  background-color: white;
+}
+.card-img{
+  width: 100%;
+}
+.suggestions{
+  max-height: 300px;
+}
+
+/* ---- isotope ---- */
+
+.grid {
+  position: relative;
+   text-align:center;
+}
+
+/* ---- .element-item ---- */
+
+.element-item {
+  vertical-align:middle;
+  display:inline-block;
+  width: 20%;
+  position: relative;
+  float: left;
+  margin: 5px;
+  padding: 10px;
+
+}
+.pannelFullSize{
+  height:96vh;
+  margin-top:  2vh!important;
+  margin-bottom:  2vh!important;
+}
+
+
+h2{
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color:white;
+}
