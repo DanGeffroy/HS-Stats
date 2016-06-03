@@ -14,8 +14,8 @@ import {CHART_DIRECTIVES} from 'ng2-charts';
 })
 export class StatsComponent implements OnInit {
   // Doughnut
-   public doughnutChartLabels:string[] = ['Download Sales', 'In-Store Sales', 'Mail-Order Sales'];
-   public doughnutChartData:number[] = [350, 450, 100];
+   public doughnutChartLabels:string[] = [];
+   public doughnutChartData:number[] = [];
    public doughnutChartType:string = 'doughnut';
 
 
@@ -24,6 +24,22 @@ export class StatsComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
+    setTimeout(function(){
+      this.sets.forEach(function(element){
+        this.doughnutChartLabels.push(element.name);
+        this.doughnutChartData.push(element.cards.length)
+      }.bind(this));
+    }.bind(this), 7000);
+
   }
+
+  // events
+public chartClicked(e:any):void {
+  console.log(e);
+}
+
+public chartHovered(e:any):void {
+  console.log(e);
+}
 
 }
