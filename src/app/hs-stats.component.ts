@@ -4,6 +4,7 @@ import { InfosService } from './infos.service';
 import { Card } from './card';
 import { Infos } from './infos';
 import { CardName} from './card-name.pipe';
+import { StatsComponent} from './stats/stats.component';
 
 import {PaginatePipe, PaginationControlsCmp, PaginationService} from 'ng2-pagination';
 
@@ -12,7 +13,7 @@ import {PaginatePipe, PaginationControlsCmp, PaginationService} from 'ng2-pagina
   selector: 'hs-stats-app',
   templateUrl: 'hs-stats.component.html',
   styleUrls: ['hs-stats.component.css'],
-  directives: [PaginationControlsCmp],
+  directives: [PaginationControlsCmp,StatsComponent],
   providers: [
     CardsService,InfosService,PaginationService
   ],

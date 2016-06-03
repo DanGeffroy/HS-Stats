@@ -10,6 +10,7 @@ h2{
   margin-bottom: 0px;
   font-weight: 500;
   text-transform: uppercase;
+  color:white;
 }
 /*  height:96vh;
   margin-top:  2vh!important;
@@ -33,11 +34,6 @@ h2{
   max-height: 300px;
 }
 
-.pagination{
-  width: 50%;
-    position: absolute;
-   bottom: 10px;
-}
 /* ---- isotope ---- */
 
 .grid {
