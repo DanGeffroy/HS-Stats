@@ -3,13 +3,22 @@
  **********************************************************************************************/
 /** Map relative paths to URLs. */
 const map: any = {
-  'ng2-pagination' : 'vendor/ng2-pagination/dist/ng2-pagination-bundle.js'
+  'ng2-pagination' : 'vendor/ng2-pagination/dist/ng2-pagination-bundle.js',
+  'ng2-charts': 'vendor/ng2-charts',
+    'chartjs': 'vendor/chart.js/dist/Chart.bundle.min.js',
+    'color-name': 'vendor/color-name/index.js',
+    'color-convert': 'vendor/color-convert/index.js',
+    'chartjs-color': 'vendor/chartjs-color/dist/color.js',
+    'chartjs-color-string': 'vendor/chartjs-color-string/color-string.js',
 };
 
 /** User packages configuration. */
 const packages: any = {
   'ng2-pagination' : { format: 'register',
- defaultExtension: 'js'}
+ defaultExtension: 'js'},
+
+ 'ng2-charts': { defaultExtension: 'js', main: 'ng2-charts.js' },
+  'chartjs': { defaultExtension: 'js', format: 'cjs' }
 };
 
 ////////////////////////////////////////////////////////////////////////////////////////////////

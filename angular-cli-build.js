@@ -12,7 +12,13 @@ module.exports = function(defaults) {
       'reflect-metadata/**/*.+(js|js.map)',
       'rxjs/**/*.+(js|js.map)',
       '@angular/**/*.+(js|js.map)',
-      'ng2-pagination/dist/ng2-pagination-bundle.js'
+      'ng2-pagination/dist/ng2-pagination-bundle.js',
+      'color-name/**/*.+(js|js.map)',
+      'color-convert/**/*.+(js|js.map)',
+      'chart.js/dist/Chart.bundle.min.js',
+      'chartjs-color/dist/color.js',
+      'chartjs-color-string/color-string.js',
+      'ng2-charts/**/*.+(js|js.map)'
     ]
   });
 };

@@ -16,3 +16,4 @@ h2{
   overflow-y: hidden;
   overflow-x: hidden;
 }
+.chart {display: block; width: 100%;}
