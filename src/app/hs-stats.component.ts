@@ -55,7 +55,7 @@ export class HSStatsAppComponent  implements OnInit{
   test(res){
     this.infos = res;
     this.infos.sets.forEach(function(element, index, array) {
-      if(element !== "Slush" && element !== "Promo"){
+      if(element !== "Slush" && element !== "Promo" && element !== "Missions" && element !== "Credits" && element !== "System" && element !== "Hero Skins" && element !== "Tavern Brawl"){
           this.getCardsBySet(element);
       }
 
