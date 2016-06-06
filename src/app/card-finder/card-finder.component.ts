@@ -60,4 +60,10 @@ export class CardFinderComponent implements OnInit {
     }
   }
 
+  flipPanel(){
+    document.querySelector("#flip-toggle").classList.toggle("flip")
+    console.log("fliped")
+
+  }
+
 }
