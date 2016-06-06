@@ -11,10 +11,10 @@
              <input id="listFilter" #listFilter type="text" class="validate filter-input" [(ngModel)]=query (keyup)="filter(); 0">
              <label for="country">Card name</label>
            </div>
-           <div *ngIf="filteredList.length > 0">
-               <ul class="suggestions" *ngFor="let item of filteredList" >
-                   <li >
-                       <a (click)="select(item)">{{item}}</a>
+           <div class ="col s12"*ngIf="filteredList.length > 0">
+               <ul class="suggestions card-panel blue lighten-5" >
+                   <li (click)="select(item)" class="automplete-field" *ngFor="let item of filteredList" >
+                       <a >{{item}}</a>
                    </li>
                </ul>
            </div>
@@ -22,7 +22,7 @@
 </div>
 <div class="card-panel">
 <div class="row grid">
-<div  *ngIf="allCards" *ngFor="let card of allCards | cardName:listFilter.value | paginate: { itemsPerPage: 8, currentPage: p }">
+<div  *ngIf="allCards" *ngFor="let card of allCards.reverse() | cardName:listFilter.value | paginate: { itemsPerPage: 8, currentPage: p }">
     <div *ngIf="card" class="element-item">
       <img *ngIf="card.img" class="card-img" src="{{card.img}}"/>
     </div>

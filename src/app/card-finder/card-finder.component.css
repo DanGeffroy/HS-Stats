@@ -8,8 +8,17 @@
 }
 .suggestions{
   max-height: 300px;
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;;
 }
-
+.automplete-field{
+  cursor: pointer;
+  width: 100%;
+}
+.automplete-field:hover{
+  background-color: #bbdefb;
+}
 /* ---- isotope ---- */
 
 .grid {
