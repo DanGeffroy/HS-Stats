@@ -21,10 +21,10 @@
 </div>
 </div>
 <div class="card-panel">
-<div class="row grid">
+<div class="row">
 <div  *ngIf="allCards" *ngFor="let card of allCards.reverse() | cardName:listFilter.value | paginate: { itemsPerPage: 8, currentPage: p }">
-    <div *ngIf="card" class="element-item">
-      <img *ngIf="card.img" class="card-img" src="{{card.img}}"/>
+    <div *ngIf="card" class="col l3 m4 s6">
+      <img *ngIf="card.img" class="responsive-img" src="{{card.img}}"/>
     </div>
 
 </div>
