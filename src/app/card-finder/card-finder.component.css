@@ -1,6 +1,5 @@
 .card-finder{
 
-  overflow-y: hidden;
   overflow-x: hidden;
   background-color: white;
 }
@@ -46,10 +45,17 @@ h2{
 }
 
 
-.settingsToggle{
+.settingsToggleOn{
+  position: absolute;
+top: 20px;
+right: 20px;
+cursor: pointer;
+}
+.settingsToggleOff{
   position: absolute;
 top: 40px;
 right: 30px;
+cursor: pointer;
 }
 /*Flip effect*/
 /* entire container, keeps perspective */
@@ -77,9 +83,13 @@ right: 30px;
 /* hide back of pane during swap */
 .front, .back {
 	backface-visibility: hidden;
+}
+/* hide back of pane during swap */
+.back {
+	backface-visibility: hidden;
 
 	position: absolute;
-	top: 0;
+	top: -2%;
 	left: 0;
 }
 
