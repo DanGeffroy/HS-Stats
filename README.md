@@ -32,6 +32,7 @@ The app is now available on http://localhost:4200/
 
 ##TODO
 - :white_check_mark: card finder with autocomplete
+- add filter option to the card finder
 - stats for all cards
 - stats for some cards with criteria
 - Better UI
