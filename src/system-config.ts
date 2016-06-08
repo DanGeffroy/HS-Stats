@@ -3,7 +3,7 @@
  **********************************************************************************************/
 /** Map relative paths to URLs. */
 const map: any = {
-  'ng2-pagination' : 'vendor/ng2-pagination/dist/ng2-pagination-bundle.js',
+  'ng2-pagination' : 'vendor/ng2-pagination/dist',
   'ng2-charts': 'vendor/ng2-charts',
     'chartjs': 'vendor/chart.js/dist/Chart.bundle.min.js',
     'color-name': 'vendor/color-name/index.js',
@@ -14,7 +14,7 @@ const map: any = {
 
 /** User packages configuration. */
 const packages: any = {
-  'ng2-pagination' : { format: 'register',
+  'ng2-pagination' : { main: 'ng2-pagination.js' ,
  defaultExtension: 'js'},
 
  'ng2-charts': { defaultExtension: 'js', main: 'ng2-charts.js' },

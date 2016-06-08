@@ -12,7 +12,7 @@ module.exports = function(defaults) {
       'reflect-metadata/**/*.+(js|js.map)',
       'rxjs/**/*.+(js|js.map)',
       '@angular/**/*.+(js|js.map)',
-      'ng2-pagination/dist/ng2-pagination-bundle.js',
+      'ng2-pagination/dist/*.+(js|js.map)',
       'color-name/**/*.+(js|js.map)',
       'color-convert/**/*.+(js|js.map)',
       'chart.js/dist/Chart.bundle.min.js',
