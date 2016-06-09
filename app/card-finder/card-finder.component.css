@@ -1,0 +1,115 @@
+.card-finder{
+
+  overflow-x: hidden;
+  background-color: white;
+}
+.card-img{
+  width: 100%;
+}
+.suggestions{
+  max-height: 300px;
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;;
+}
+.automplete-field{
+  cursor: pointer;
+  width: 100%;
+}
+.automplete-field:hover{
+  background-color: #bbdefb;
+}
+/* ---- isotope ---- */
+
+.grid {
+  position: relative;
+   text-align:center;
+}
+
+/* ---- .element-item ---- */
+
+.element-item {
+  vertical-align:middle;
+  display:inline-block;
+  width: 20%;
+  position: relative;
+  float: left;
+  margin: 5px;
+  padding: 10px;
+
+}
+.pannelFullSize{
+  height:96vh;
+  margin-top:  2vh!important;
+  margin-bottom:  2vh!important;
+}
+
+
+h2{
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color:white;
+}
+
+
+.settingsToggleOn{
+  position: absolute;
+top: 20px;
+right: 20px;
+cursor: pointer;
+}
+.settingsToggleOff{
+  position: absolute;
+top: 40px;
+right: 30px;
+cursor: pointer;
+}
+/*Flip effect*/
+/* entire container, keeps perspective */
+.flip-container {
+	perspective: 1000px;
+}
+	/* flip the pane when hovered */
+	.flip-container.flip .flipper {
+		transform: rotateY(180deg);
+	}
+
+.flip-container, .front, .back {
+	width: 100%;
+	height: 100%;
+}
+
+/* flip speed goes here */
+.flipper {
+	transition: 0.6s;
+	transform-style: preserve-3d;
+
+	position: relative;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+	backface-visibility: hidden;
+}
+/* hide back of pane during swap */
+.back {
+	backface-visibility: hidden;
+
+	position: absolute;
+	top: -2%;
+	left: 0;
+}
+
+/* front pane, placed above back */
+.front {
+	z-index: 2;
+	/* for firefox 31 */
+	transform: rotateY(0deg);
+}
+
+/* back, initially hidden pane */
+.back {
+	transform: rotateY(180deg);
+}

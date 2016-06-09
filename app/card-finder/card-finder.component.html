@@ -1,0 +1,46 @@
+<div class="flip-container" id="flip-toggle">
+  <div class="flipper">
+  <div class="front">
+<div class="card-finder  pannelFullSize card-panel  blue lighten-2">
+  <a (click)="flipPanel()" class="white-text settingsToggleOn"><i class="fa fa-cogs fa-3x" aria-hidden="true"></i></a>
+
+  <h2>Card finder</h2>
+<div class=card-panel>
+<div class="row">
+          <div class="input-field col s12">
+             <input id="listFilter" #listFilter type="text" class="validate filter-input" [(ngModel)]=query (keyup)="filter(); 0">
+             <label for="country">Card name</label>
+           </div>
+           <div class ="col s12"*ngIf="filteredList.length > 0">
+               <ul class="suggestions card-panel blue lighten-5" >
+                   <li (click)="select(item)" class="automplete-field" *ngFor="let item of filteredList" >
+                       <a >{{item}}</a>
+                   </li>
+               </ul>
+           </div>
+</div>
+</div>
+<div class="card-panel">
+<div class="row">
+<div  *ngIf="allCards" *ngFor="let card of allCards.reverse() | cardName:listFilter.value | paginate: { itemsPerPage: 8, currentPage: p }">
+    <div *ngIf="card" class="col l3 m4 s6">
+      <img *ngIf="card.img" class="responsive-img" src="{{card.img}}"/>
+    </div>
+
+</div>
+</div>
+<div class="row center pagination">
+<pagination-controls (pageChange)="p = $event"></pagination-controls>
+</div>
+</div>
+</div>
+
+</div>
+<div class="back">
+  <div class="card-finder  pannelFullSize card-panel  blue lighten-2">
+      <a (click)="flipPanel()" class="white-text settingsToggleOff"><i class="fa fa-cogs fa-3x" aria-hidden="true"></i></a>
+			<h2>Settings</h2>
+      </div>
+		</div>
+</div>
+</div>
