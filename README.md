@@ -1,4 +1,4 @@
-# HS-Stats (wip)
+# HS-Stats (wip) : [link](http://dangeffroy.github.io/HS-Stats/)
 ## what?
 I want to do an app that use the Hearthstone api to generate cool graphs like : 
  - cards repartition
