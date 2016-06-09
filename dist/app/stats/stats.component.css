@@ -1,0 +1,19 @@
+.pannelFullSize{
+  height:96vh;
+  margin-top:  2vh!important;
+  margin-bottom:  2vh!important;
+}
+
+
+h2{
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color:white;
+}
+.stats{
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+.chart {display: block; width: 100%;}
