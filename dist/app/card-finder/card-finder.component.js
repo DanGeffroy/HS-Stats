@@ -11,6 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var card_name_pipe_1 = require('./card-name.pipe');
 var ng2_pagination_1 = require('ng2-pagination');
+var angular2_materialize_1 = require("angular2-materialize");
 var CardFinderComponent = (function () {
     function CardFinderComponent() {
     }
@@ -47,6 +48,9 @@ var CardFinderComponent = (function () {
         document.querySelector("#flip-toggle").classList.toggle("flip");
         console.log("fliped");
     };
+    CardFinderComponent.prototype.initCardsModal = function () {
+        $('.modal-trigger').leanModal();
+    };
     __decorate([
         core_1.Input(), 
         __metadata('design:type', Object)
@@ -81,7 +85,7 @@ var CardFinderComponent = (function () {
             selector: 'app-card-finder',
             templateUrl: 'card-finder.component.html',
             styleUrls: ['card-finder.component.css'],
-            directives: [ng2_pagination_1.PaginationControlsCmp],
+            directives: [ng2_pagination_1.PaginationControlsCmp, angular2_materialize_1.MaterializeDirective],
             providers: [ng2_pagination_1.PaginationService],
             pipes: [card_name_pipe_1.CardName, ng2_pagination_1.PaginatePipe]
         }), 

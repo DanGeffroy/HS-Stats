@@ -2,7 +2,12 @@ body{
   height:100vh;
   background: linear-gradient(to bottom right, #3949ab, #b388ff);
 }
-
+.lean-overlay{
+}
+.modal{
+  background-color: transparent;
+  box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.22), 0 0px 0px 0 rgba(0, 0, 0, 0.21);
+}
 /*Scroll bar stuff*/
 ::-webkit-scrollbar {
   width: 5px;

@@ -10,13 +10,25 @@ var map = {
     'color-convert': 'vendor/color-convert/index.js',
     'chartjs-color': 'vendor/chartjs-color/dist/color.js',
     'chartjs-color-string': 'vendor/chartjs-color-string/color-string.js',
+    "materialize": "vendor/materialize-css",
+    "angular2-materialize": "vendor/angular2-materialize",
+    "jquery": "vendor/jquery"
 };
 /** User packages configuration. */
 var packages = {
     'ng2-pagination': { main: 'ng2-pagination.js',
         defaultExtension: 'js' },
     'ng2-charts': { defaultExtension: 'js', main: 'ng2-charts.js' },
-    'chartjs': { defaultExtension: 'js', format: 'cjs' }
+    'chartjs': { defaultExtension: 'js', format: 'cjs' },
+    'materialize': {
+        "format": "global",
+        "main": "dist/js/materialize",
+        "defaultExtension": "js"
+    },
+    'angular2-materialize': {
+        "main": "dist/index",
+        "defaultExtension": "js"
+    }
 };
 ////////////////////////////////////////////////////////////////////////////////////////////////
 /***********************************************************************************************
