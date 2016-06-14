@@ -18,14 +18,17 @@ var StatsComponent = (function () {
         this.doughnutChartLabels = [];
         this.doughnutChartData = [];
         this.doughnutChartType = 'doughnut';
+        this.doughnutChartColors = [{ backgroundColor: ["#ffcdd2", "#e53935", "#f06292", "#e1bee7", "#7b1fa2", "#3949ab", "#2196f3", "#81c784", "#fdd835", "#e65100"] }];
     }
     StatsComponent.prototype.ngOnInit = function () {
         setTimeout(function () {
+            this.doughnutChartLabels = [];
+            this.doughnutChartData = [];
             this.sets.forEach(function (element) {
-                this.doughnutChartLabels.push(element.name);
-                this.doughnutChartData.push(element.cards.length);
+                this.doughnutChartLabels = this.doughnutChartLabels.concat([element.name]);
+                this.doughnutChartData = this.doughnutChartData.concat([element.cards.length]);
             }.bind(this));
-        }.bind(this), 7000);
+        }.bind(this), 5000);
     };
     // events
     StatsComponent.prototype.chartClicked = function (e) {

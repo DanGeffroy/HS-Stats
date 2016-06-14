@@ -17,7 +17,7 @@ export class StatsComponent implements OnInit {
    public doughnutChartLabels:string[] = [];
    public doughnutChartData:number[] = [];
    public doughnutChartType:string = 'doughnut';
-
+   public doughnutChartColors: any[] = [{ backgroundColor: ["#ffcdd2", "#e53935", "#f06292", "#e1bee7","#7b1fa2","#3949ab","#2196f3","#81c784","#fdd835","#e65100"] }];
 
   @Input()
   sets
@@ -25,11 +25,14 @@ export class StatsComponent implements OnInit {
 
   ngOnInit() {
     setTimeout(function(){
+        this.doughnutChartLabels =[];
+        this.doughnutChartData = [];
+
       this.sets.forEach(function(element){
-        this.doughnutChartLabels.push(element.name);
-        this.doughnutChartData.push(element.cards.length)
+        this.doughnutChartLabels = [...this.doughnutChartLabels, element.name];
+        this.doughnutChartData = [...this.doughnutChartData, element.cards.length];
       }.bind(this));
-    }.bind(this), 7000);
+    }.bind(this), 5000);
 
   }
 
