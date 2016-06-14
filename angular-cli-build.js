@@ -18,7 +18,10 @@ module.exports = function(defaults) {
       'chart.js/dist/Chart.bundle.min.js',
       'chartjs-color/dist/color.js',
       'chartjs-color-string/color-string.js',
-      'ng2-charts/**/*.+(js|js.map)'
+      'ng2-charts/**/*.+(js|js.map)',
+      'jquery/dist/*',
+      'angular2-materialize/dist/*',
+      'materialize-css/dist/**/*'
     ]
   });
 };

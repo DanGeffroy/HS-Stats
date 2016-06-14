@@ -4,8 +4,7 @@ import { InfosService } from './infos.service';
 import { Card } from './card';
 import { Infos } from './infos';
 import { StatsComponent} from './stats/stats.component';
-import {CardFinderComponent} from './card-finder/card-finder.component'
-
+import {CardFinderComponent} from './card-finder/card-finder.component';
 
 
 
