@@ -37,3 +37,4 @@ The app is now available on http://localhost:4200/
 - stats for some cards with criteria
 - Better UI
 
+Made with :heart: by Dan
