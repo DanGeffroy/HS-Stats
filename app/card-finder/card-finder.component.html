@@ -24,7 +24,14 @@
 <div class="row">
 <div  *ngIf="allCards" *ngFor="let card of allCards.reverse() | cardName:listFilter.value | paginate: { itemsPerPage: 8, currentPage: p }">
     <div *ngIf="card" class="col l3 m4 s6">
-      <img *ngIf="card.img" class="responsive-img" src="{{card.img}}"/>
+      <a materialize="leanModal"  [materializeParams]="[{ dismissible: true,  opacity: 0.0, in_duration: 300,  out_duration: 200}]" class="modal-trigger" href="#{{card.cardId}}"><img *ngIf="card.img" class="responsive-img" src="{{card.img}}"/></a>
+      <div id="{{card.cardId}}" class="modal">
+        <div class="modal-content center">
+          <img *ngIf="card.img" src="{{card.img}}"/>
+        </div>
+      </div>
+
+
     </div>
 
 </div>
