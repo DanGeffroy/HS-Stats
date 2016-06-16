@@ -38,12 +38,14 @@ export class HSStatsAppComponent  implements OnInit{
         .then(response => this.test2(response, set) );
   }
   test2(response, set){
-    this.sets = [...this.sets, {"name" : set, "cards" :response}];
+    if(set !== "Slush" && set !== "Promo" && set !== "Missions" && set !== "Credits" && set !== "System" && set !== "Hero Skins" && set !== "Tavern Brawl"){
+      this.sets = [...this.sets, {"name" : set, "cards" :response}];
 
-    response.forEach(function(element){
-      this.countries.push(element.name);
-      this.allCards = [...this.allCards, element];
-    }.bind(this));
+      response.forEach(function(element){
+        this.countries.push(element.name);
+        this.allCards = [...this.allCards, element];
+      }.bind(this));
+    }
   }
   getInfos(){
     this.infosService
