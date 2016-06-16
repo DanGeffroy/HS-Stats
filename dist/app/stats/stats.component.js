@@ -28,6 +28,7 @@ var StatsComponent = (function () {
             { data: [], label: 'Rare' },
             { data: [], label: 'Common' }
         ];
+        this.numberOfCards = 0;
     }
     StatsComponent.prototype.ngOnInit = function () {
         setTimeout(function () {
@@ -40,6 +41,7 @@ var StatsComponent = (function () {
                 var rareNumber = 0;
                 var commonNumber = 0;
                 element.cards.forEach(function (element) {
+                    this.numberOfCards++;
                     if (element.rarity === "Legendary") {
                         legNumber++;
                     }

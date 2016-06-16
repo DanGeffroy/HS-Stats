@@ -32,6 +32,8 @@ export class StatsComponent implements OnInit {
 
   @Input()
   sets
+
+  numberOfCards = 0;
   constructor() {}
 
   ngOnInit() {
@@ -46,6 +48,7 @@ export class StatsComponent implements OnInit {
         var rareNumber = 0;
         var commonNumber = 0
         element.cards.forEach(function(element){
+          this.numberOfCards++;
           if(element.rarity ==="Legendary"){
             legNumber++;
           }
