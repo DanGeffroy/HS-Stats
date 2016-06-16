@@ -13,11 +13,22 @@ import {CHART_DIRECTIVES} from 'ng2-charts';
   directives:[CHART_DIRECTIVES, NgClass, CORE_DIRECTIVES, FORM_DIRECTIVES]
 })
 export class StatsComponent implements OnInit {
-  // Doughnut
-   public doughnutChartLabels:string[] = [];
-   public doughnutChartData:number[] = [];
-   public doughnutChartType:string = 'doughnut';
-   public doughnutChartColors: any[] = [{ backgroundColor: ["#ffcdd2", "#e53935", "#f06292", "#e1bee7","#7b1fa2","#3949ab","#2196f3","#81c784","#fdd835","#e65100"] }];
+  public barChartOptions:any = {
+     scaleShowVerticalLines: false,
+     responsive: true
+   };
+   public barChartLabels:string[] = [];
+   public barChartType:string = 'bar';
+   public barChartLegend:boolean = true;
+
+  // public doughnutChartColors: any[] = [{ backgroundColor: ["#ffce56", "#84587B", "#2F5898", "#D6D2CF"] }];
+
+   public barChartData:any[] = [
+     {data: [], label:'Legendaries'},
+     {data: [], label:'Epic'},
+     {data: [], label:'Rare'},
+     {data: [], label:'Common'}
+   ];
 
   @Input()
   sets
@@ -25,12 +36,35 @@ export class StatsComponent implements OnInit {
 
   ngOnInit() {
     setTimeout(function(){
-        this.doughnutChartLabels =[];
-        this.doughnutChartData = [];
+        this.barChartLabels =[];
+        this.barChartData[0].data = [];
 
       this.sets.forEach(function(element){
-        this.doughnutChartLabels = [...this.doughnutChartLabels, element.name];
-        this.doughnutChartData = [...this.doughnutChartData, element.cards.length];
+        this.barChartLabels = [...this.barChartLabels, element.name];
+        var legNumber = 0;
+        var epicNumebr = 0;
+        var rareNumber = 0;
+        var commonNumber = 0
+        element.cards.forEach(function(element){
+          if(element.rarity ==="Legendary"){
+            legNumber++;
+          }
+          if(element.rarity ==="Epic"){
+            epicNumebr++;
+          }
+          if(element.rarity ==="Rare"){
+            rareNumber++;
+          }
+          if(element.rarity ==="Common"){
+            commonNumber++;
+          }
+
+        }.bind(this));
+        this.barChartData[0].data = [...this.barChartData[0].data, legNumber];
+        this.barChartData[1].data = [...this.barChartData[1].data, epicNumebr];
+        this.barChartData[2].data = [...this.barChartData[2].data, rareNumber];
+        this.barChartData[3].data = [...this.barChartData[3].data, commonNumber];
+
       }.bind(this));
     }.bind(this), 5000);
 

@@ -1,12 +1,16 @@
 <div class="stats card-panel deep-purple lighten-2 pannelFullSize ">
 <h2>Stats</h2>
   <div class="row">
-  <base-chart class="chart"
-                [data]="doughnutChartData"
-                [labels]="doughnutChartLabels"
-                [chartType]="doughnutChartType"
-                [colors]="doughnutChartColors"
-                (chartHover)="chartHovered($event)"
-                (chartClick)="chartClicked($event)"></base-chart>
+    <div class="card-panel">
+      <h4>Number of card by expentions</h4>
+      <base-chart class="chart"
+                 [datasets]="barChartData"
+                 [labels]="barChartLabels"
+                 [options]="barChartOptions"
+                 [legend]="barChartLegend"
+                 [chartType]="barChartType"
+                 (chartHover)="chartHovered($event)"
+                 (chartClick)="chartClicked($event)"></base-chart>
+    </div>
   </div>
 </div>
