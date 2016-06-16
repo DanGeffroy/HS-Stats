@@ -31,11 +31,13 @@ var HSStatsAppComponent = (function () {
             .then(function (response) { return _this.test2(response, set); });
     };
     HSStatsAppComponent.prototype.test2 = function (response, set) {
-        this.sets = this.sets.concat([{ "name": set, "cards": response }]);
-        response.forEach(function (element) {
-            this.countries.push(element.name);
-            this.allCards = this.allCards.concat([element]);
-        }.bind(this));
+        if (set !== "Slush" && set !== "Promo" && set !== "Missions" && set !== "Credits" && set !== "System" && set !== "Hero Skins" && set !== "Tavern Brawl") {
+            this.sets = this.sets.concat([{ "name": set, "cards": response }]);
+            response.forEach(function (element) {
+                this.countries.push(element.name);
+                this.allCards = this.allCards.concat([element]);
+            }.bind(this));
+        }
     };
     HSStatsAppComponent.prototype.getInfos = function () {
         var _this = this;

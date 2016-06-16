@@ -24,11 +24,14 @@
 <div class="row">
 <div  *ngIf="allCards" *ngFor="let card of allCards.reverse() | cardName:listFilter.value | paginate: { itemsPerPage: 8, currentPage: p }">
     <div *ngIf="card" class="col l3 m4 s6">
-      <a *ngIf="card.img" materialize="leanModal"  [materializeParams]="[{ dismissible: true,  opacity: 0.0, in_duration: 300,  out_duration: 200}]" class="modal-trigger" href="#{{card.cardId}}">
-
-        <img *ngIf="goldenCards"  class="responsive-img card-img" src="{{card.imgGold}}"/>
-        <img *ngIf="!goldenCards"  class="responsive-img card-img" src="{{card.img}}"/>
-
+      <a materialize="leanModal"  [materializeParams]="[{ dismissible: true,  opacity: 0.0, in_duration: 300,  out_duration: 200}]" class="modal-trigger" href="#{{card.cardId}}">
+        <div *ngIf="card.img">
+          <img *ngIf="goldenCards"  class="responsive-img card-img" src="{{card.imgGold}}"/>
+          <img *ngIf="!goldenCards"  class="responsive-img card-img" src="{{card.img}}"/>
+        </div>
+        <div *ngIf="!card.img">
+          <img class="responsive-img card-img" src="http://wow.zamimg.com/images/hearthstone/cards/enus/original/GAME_006.png"/>
+        </div>
       </a>
       <div id="{{card.cardId}}" class="modal">
         <div class="modal-content center">
