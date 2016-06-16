@@ -1,6 +1,6 @@
 <div class="stats card-panel deep-purple lighten-2 pannelFullSize ">
 <h2>Stats</h2>
-  <div class="row">
+  <div class="col s12">
     <div class="card-panel">
       <h4>Number of card by expentions</h4>
       <base-chart class="chart"
@@ -11,6 +11,23 @@
                  [chartType]="barChartType"
                  (chartHover)="chartHovered($event)"
                  (chartClick)="chartClicked($event)"></base-chart>
+    </div>
+
+  </div>
+  <div class="col s12 m6 l4">
+    <div class="card-panel">
+      <div class="row">
+        <h5>Total</h5>
+      </div>
+      <div class="row center">
+          <span class="cardNumber">{{numberOfCards}}</span>
+          <span class="cardText">cards</span>
+      </div>
+    </div>
+  </div>
+  <div class="col s12 m6 l8">
+    <div class="card-panel">
+
     </div>
   </div>
 </div>

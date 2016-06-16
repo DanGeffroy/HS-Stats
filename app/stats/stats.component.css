@@ -17,3 +17,15 @@ h2{
   overflow-x: hidden;
 }
 .chart {display: block; width: 100%;}
+
+.cardNumber{
+  font-size: 250%;
+  font-style: italic;
+  font-weight: bold;
+}
+.cardText{
+  font-size: 120%;
+}
+.hearthstone-logo{
+  max-width: 80%;
+}
