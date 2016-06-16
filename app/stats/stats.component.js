@@ -14,19 +14,49 @@ require('chartjs');
 var ng2_charts_1 = require('ng2-charts');
 var StatsComponent = (function () {
     function StatsComponent() {
-        // Doughnut
-        this.doughnutChartLabels = [];
-        this.doughnutChartData = [];
-        this.doughnutChartType = 'doughnut';
-        this.doughnutChartColors = [{ backgroundColor: ["#ffcdd2", "#e53935", "#f06292", "#e1bee7", "#7b1fa2", "#3949ab", "#2196f3", "#81c784", "#fdd835", "#e65100"] }];
+        this.barChartOptions = {
+            scaleShowVerticalLines: false,
+            responsive: true
+        };
+        this.barChartLabels = [];
+        this.barChartType = 'bar';
+        this.barChartLegend = true;
+        // public doughnutChartColors: any[] = [{ backgroundColor: ["#ffce56", "#84587B", "#2F5898", "#D6D2CF"] }];
+        this.barChartData = [
+            { data: [], label: 'Legendaries' },
+            { data: [], label: 'Epic' },
+            { data: [], label: 'Rare' },
+            { data: [], label: 'Common' }
+        ];
     }
     StatsComponent.prototype.ngOnInit = function () {
         setTimeout(function () {
-            this.doughnutChartLabels = [];
-            this.doughnutChartData = [];
+            this.barChartLabels = [];
+            this.barChartData[0].data = [];
             this.sets.forEach(function (element) {
-                this.doughnutChartLabels = this.doughnutChartLabels.concat([element.name]);
-                this.doughnutChartData = this.doughnutChartData.concat([element.cards.length]);
+                this.barChartLabels = this.barChartLabels.concat([element.name]);
+                var legNumber = 0;
+                var epicNumebr = 0;
+                var rareNumber = 0;
+                var commonNumber = 0;
+                element.cards.forEach(function (element) {
+                    if (element.rarity === "Legendary") {
+                        legNumber++;
+                    }
+                    if (element.rarity === "Epic") {
+                        epicNumebr++;
+                    }
+                    if (element.rarity === "Rare") {
+                        rareNumber++;
+                    }
+                    if (element.rarity === "Common") {
+                        commonNumber++;
+                    }
+                }.bind(this));
+                this.barChartData[0].data = this.barChartData[0].data.concat([legNumber]);
+                this.barChartData[1].data = this.barChartData[1].data.concat([epicNumebr]);
+                this.barChartData[2].data = this.barChartData[2].data.concat([rareNumber]);
+                this.barChartData[3].data = this.barChartData[3].data.concat([commonNumber]);
             }.bind(this));
         }.bind(this), 5000);
     };
