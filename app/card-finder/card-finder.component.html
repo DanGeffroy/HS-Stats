@@ -1,8 +1,8 @@
 <div class="flip-container" id="flip-toggle">
   <div class="flipper">
   <div class="front">
-<div class="card-finder  pannelFullSize card-panel  blue lighten-2">
-  <a (click)="flipPanel()" class="white-text settingsToggleOn"><i class="fa fa-cogs fa-3x" aria-hidden="true"></i></a>
+<div class="card-finder  pannelFullSize">
+  <a (click)="flipPanel()" class="white-text settingsToggleOn"><i class="fa fa-cog fa-3x" aria-hidden="true"></i></a>
 
   <h2>Card finder</h2>
 <div class=card-panel>
@@ -20,9 +20,9 @@
            </div>
 </div>
 </div>
-<div class="card-panel">
+<div class="card-panel allCardsPanel">
 <div class="row">
-<div  *ngIf="allCards" *ngFor="let card of allCards.reverse() | cardName:listFilter.value | paginate: { itemsPerPage: 8, currentPage: p }">
+<div  *ngIf="allCards" *ngFor="let card of allCards.reverse() | cardName:listFilter.value | paginate: { itemsPerPage: 32, currentPage: p }">
     <div *ngIf="card" class="col l3 m4 s6">
       <a materialize="leanModal"  [materializeParams]="[{ dismissible: true,  opacity: 0.0, in_duration: 300,  out_duration: 200}]" class="modal-trigger" href="#{{card.cardId}}">
         <div *ngIf="card.img">
@@ -46,16 +46,19 @@
 
 </div>
 </div>
-<div class="row center pagination">
-<pagination-controls (pageChange)="p = $event"></pagination-controls>
 </div>
+<div class="row center pagination">
+  <div class="card-panel">
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  </div>
+
 </div>
 </div>
 
 </div>
 <div class="back">
-  <div class="card-finder  pannelFullSize card-panel  blue lighten-2">
-      <a (click)="flipPanel()" class="white-text settingsToggleOff"><i class="fa fa-cogs fa-3x" aria-hidden="true"></i></a>
+  <div class="card-finder  pannelFullSize ">
+      <a (click)="flipPanel()" class="white-text settingsToggleOff"><i class="fa fa-cog fa-3x" aria-hidden="true"></i></a>
 			<h2>Settings</h2>
         <div class="card-panel">
           <h4>Cards options</h4>
