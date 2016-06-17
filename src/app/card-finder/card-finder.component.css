@@ -1,7 +1,6 @@
 .card-finder{
-
+  overflow-y: hidden;
   overflow-x: hidden;
-  background-color: white;
 }
 .card-img{
     -webkit-filter: drop-shadow(3px 4px 3px rgba(0, 0, 0, 0.53));
@@ -16,7 +15,10 @@ transition: all 0.3s;
 transform: scale(1.1);
 
 }
-
+.allCardsPanel{
+  overflow-y: scroll;
+  max-height: 50vh;
+}
 .card-img-full{
     -webkit-filter: drop-shadow(5px 5px 10px #222);
     filter:         drop-shadow(5px 5px 10px #222);
@@ -26,7 +28,7 @@ transform: scale(1.1);
   max-height: 300px;
   width: 100%;
   overflow-x: hidden;
-  overflow-y: scroll;;
+  overflow-y: scroll;
 }
 .automplete-field{
   cursor: pointer;
@@ -72,14 +74,14 @@ h2{
 
 .settingsToggleOn{
   position: absolute;
-top: 20px;
-right: 20px;
+top: 10px;
+right: 10px;
 cursor: pointer;
 }
 .settingsToggleOff{
   position: absolute;
-top: 40px;
-right: 30px;
+top: 30px;
+right: 10px;
 cursor: pointer;
 }
 /*Flip effect*/

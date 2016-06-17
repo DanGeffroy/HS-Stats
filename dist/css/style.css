@@ -1,6 +1,8 @@
 body{
   height:100vh;
-  background: linear-gradient(to bottom right, #3949ab, #b388ff);
+  background: #fe8c00; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #fe8c00 , #f83600); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #fe8c00 , #f83600); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 .lean-overlay{
 }
@@ -25,38 +27,4 @@ body{
     -o-transform: rotate(-20deg);
     transform: rotate(-20deg);
 
-}
-/*Scroll bar stuff*/
-::-webkit-scrollbar {
-  width: 5px;
-  height: 5px;
-}
-::-webkit-scrollbar-button {
-  width: 0px;
-  height: 0px;
-}
-::-webkit-scrollbar-thumb {
-  background: white;
-  border: 0px none #ffffff;
-  border-radius: 10px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: white;
-}
-::-webkit-scrollbar-thumb:active {
-  background: white;
-}
-::-webkit-scrollbar-track {
-  background: rgba(0, 0, 255, 0.0);
-  border: 0px none #ffffff;
-  border-radius: 0px;
-}
-::-webkit-scrollbar-track:hover {
-  background: rgba(0, 0, 255, 0.0);
-}
-::-webkit-scrollbar-track:active {
-  background: rgba(0, 0, 255, 0.0);
-}
-::-webkit-scrollbar-corner {
-  background: transparent;
 }
